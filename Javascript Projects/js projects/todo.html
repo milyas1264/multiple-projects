@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>Styled Todo App</title>
+  <style>
+    /* General Page Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      /* display: flex;
+      justify-content: center;
+      align-items: flex-start; */
+      margin-left: 40%;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    /* Input + Buttons */
+    #todoInput {
+      width: 70%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .add-btn {
+      background: #28a745;
+      color: white;
+    }
+
+    .clear-btn {
+      background: #dc3545;
+      color: white;
+    }
+
+    .edit-btn {
+      background: #007bff;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .delete-btn {
+      background: #ff5722;
+      color: white;
+      margin-left: 5px;
+    }
+
+    /* Todo List */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #f9f9f9;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li span {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>My Todo List</h2>
+    
+    <!-- Input field aur buttons -->
+    <input type="text" id="todoInput" placeholder="Enter a task">
+    <button class="add-btn" onclick="addTodo()">Add</button>
+    <button class="clear-btn" onclick="clearAll()">Clear All</button>
+    
+    <!-- List -->
+    <ul id="todoList"></ul>
+  </div>
+    
+  <div>
+    <a href="../projects.html"><button><span>Back to home</span></button></a>
+    <a href="../../index.html" ><button id="main"><span>GO TO MAIN PAGE</span></button></a>
+  </div>
+  
+  <script>
+    let todos = [];
+
+    // ✅ Add Todo
+    function addTodo() {
+      let input = document.getElementById("todoInput");
+      let task = input.value.trim();
+
+      if(task !== "") {
+        todos.push(task);
+        input.value = "";
+        renderList();
+      }
+    }
+
+    // ✅ Delete Todo
+    function deleteTodo(index) {
+      todos.splice(index, 1);
+      renderList();
+    }
+
+    // ✅ Edit Todo
+    function editTodo(index) {
+      let newTask = prompt("Edit your task:", todos[index]);
+      if(newTask !== null && newTask.trim() !== "") {
+        todos[index] = newTask;
+        renderList();
+      }
+    }
+
+    // ✅ Clear All
+    function clearAll() {
+      todos = [];
+      renderList();
+    }
+
+    // ✅ Render List
+    function renderList() {
+      let list = document.getElementById("todoList");
+      list.innerHTML = "";
+
+      todos.forEach((task, index) => {
+        let li = document.createElement("li");
+
+        let span = document.createElement("span");
+        span.textContent = task;
+
+        let editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.className = "edit-btn";
+        editBtn.onclick = () => editTodo(index);
+
+        let delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.className = "delete-btn";
+        delBtn.onclick = () => deleteTodo(index);
+
+        li.appendChild(span);
+        li.appendChild(editBtn);
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
