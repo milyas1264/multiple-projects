@@ -1,0 +1,67 @@
+/* styles.scss */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #5d92f5;
+  margin: 0;
+  padding: 0;
+}
+
+.header, .footer {
+  background-color: rgb(189.0697674419, 210.6395348837, 250.9302325581);
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1, .footer p {
+  font-size: 2em;
+}
+
+main {
+  padding: 20px;
+}
+main .about h2 {
+  font-size: 1.5em;
+}
+main .about p {
+  font-size: 18px;
+}
+main .features h2 {
+  font-size: 1.5em;
+}
+main .features .feature-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+main .features .feature-list li {
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 8px;
+}
+main .example h2 {
+  font-size: 1.5em;
+}
+main .example .example-text {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+/* New styles for back to home link */
+#bkto { 
+    display: inline-block;
+    width: 500px;
+    margin: 20px;
+    margin-left: 500px;
+    padding: 10px 15px;
+    background-color: #37eeb1;
+    color: rgb(73, 68, 68);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    border-bottom: #336088 5px solid;
+    
+}

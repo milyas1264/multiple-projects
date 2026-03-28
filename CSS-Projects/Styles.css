@@ -1,0 +1,126 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    background-color: #333333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section styles */
+section {
+    margin: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333333;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Element selector */
+h2 {
+    color: black;
+}
+
+/* Class selector */
+.highlight {
+    background-color: orange;
+    color: white;
+    padding: 4px;
+}
+
+/* ID selector */
+#header {
+    border-bottom: 2px solid orange;
+}
+
+/* Attribute selector */
+a[href^="mailto:"] {
+    color: orange;
+}
+
+/* Pseudo-class selector */
+a:hover {
+    color: white;
+}
+
+/* Pseudo-element selector */
+p::first-line {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Combinator selector */
+header + main {
+    border-top: 1px solid gray;
+}
+
+/* Inline styles (highest specificity) */
+h1 {
+    color: blue !important; /* Overridden by inline styles */
+}
+
+/* Internal styles */
+p {
+    color: green;
+}
+
+/* External styles */
+p {
+    color: red; /* Overridden by internal styles */
+}
+
+#header h1 {
+    color: orange !important; /* Overridden by !important */
+}
+/* //links */
+
+#all-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #713780;
+    padding: 20px;
+    height: 20px;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+button:hover {
+    color: #e43c9e;
+    text-decoration: underline;
+}
+#pl {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: darkseagreen;
+}
+#project-links{border: 2px solid rgb(194, 191, 186);}
+
+button {
+    background-color: #359add;
+    color: white;
+    border: 2px ridge #e756db;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: normal;
+    cursor: pointer;
+}
+
+span{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(19, 219, 62);
+}

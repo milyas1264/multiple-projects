@@ -1,0 +1,406 @@
+.anim{
+  height: 100vh;
+  background-color: black;
+  display: flex;
+     
+}
+.transition{
+  width: 50%;
+  border: 5px solid greenyellow;
+  text-align: center;
+
+}
+
+.animation{
+  width: 50%;
+  border: 5px solid greenyellow;
+  text-align: center;
+}
+.box1{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: all 1s ease 0.5s;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;
+  
+}
+.box2{
+  width: 100px;
+  height: 100px;
+  background-color: salmon;
+  transition: all 1s ease-in 1s;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;
+  
+}
+.box3{
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  transition: all 1s ease-in-out 1s;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;
+  
+}
+.box4{
+  width: 100px;
+  height: 100px;
+  background-color: peru;
+  transition: all 1s ease-out 1s;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;
+}
+.box5{
+  width: 100px;
+  height: 100px;
+  background-color: hotpink;
+  transition: all 1s steps(4) 1s;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;
+}
+.box6{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: all 1s cubic-bezier(3) 1s;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.box1:hover{
+  width: 400px;
+  background-color: brown;
+  transform: scale(0.5);
+}
+.box2:hover{
+  width: 400px;
+  background-color: aqua;
+  transform: skew(30deg);
+}
+.box3:hover{
+  width: 400px;
+  background-color: green;
+  color: red;
+}
+
+.box4:hover{
+  width: 400px;
+  background-color: yellow;
+  color: green;
+  transform: scale(0.5, 3);
+}
+
+.box5:hover{
+  width: 400px;
+  background-color: purple;
+  transform: translate(100px, 100px);
+}
+/* -----------------Animations------------- */
+.box1a{
+  width: 150px;
+  height: 100px;
+  background-color: blue;
+  animation-name: ilyas;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;  
+}
+
+.box2a{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: ilyas2;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;  
+}
+.box3a{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: ilyas3;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;  
+}
+.box4a{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: ilyas4;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;  
+}
+.box5a{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: ilyas5;
+  animation-duration: 2s;
+  animation-timing-function: steps(5);
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;  
+}
+.box6a{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: ilyas6;
+  animation-duration: 2s;
+  animation-timing-function:step-end;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin-bottom: 10px;  
+}
+
+
+
+
+@keyframes ilyas{
+  from{
+      background-color: blue;
+  }
+  to{
+      background-color: green;
+      border: 5px inset red;
+      
+      
+     
+  }
+}
+@keyframes ilyas2{
+  from{
+      background-color: blue;
+  }
+  to{
+      background-color: hotpink;
+      width: 400px;
+      border: 5px groove greenyellow;
+  }
+}
+
+@keyframes ilyas3{
+  from{
+      background-color: blue;
+  }
+  to{
+      background-color: red;
+      width: 500px;
+      border: 5px dotted gold;
+  }
+}
+
+@keyframes ilyas4{
+  from{
+      background-color: blue;
+  }
+  to{
+      background-color: grey;
+      width: 600px;
+      border: 3px dashed greenyellow;
+      border-radius: 0 20px 20PX 0;
+  }
+}
+
+@keyframes ilyas5{
+  from{
+      background-color: blue;
+  }
+  to{
+      background-color: burlywood;
+      width: 500px;
+      font-size: large;
+     
+  }
+}
+/* -----------------animate2--------------------- */
+
+.container2{
+  background-color: blue;
+  border: 5px inset gold;
+  height: 600px;
+  display: flex;
+  color: azure;
+  
+}
+
+.box{
+  width: 150px;
+  height: 150px;
+  border: 10px inset yellow;
+  text-align: center;
+  align-content: center;
+  background-color: crimson;
+  animation: abc 2s alternate 5 0.5s;  
+}
+
+.green{
+  width: 150px;
+  height: 150px;
+  border: 10px outset whitesmoke;
+  text-align: center;
+  align-content: center;
+  background-color: greenyellow;
+  color: red;
+  animation: abcd 2s ease-in-out 5 0.5s alternate;  
+}
+
+.orange{
+  width: 100px;
+  height: 100px;
+  border: 10px outset gold;
+  text-align: center;
+  align-content: center;
+  background-color: navy;
+  animation: abcde 1s ease 0.5s infinite alternate;  
+}
+
+.left{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  border: 10px solid greenyellow;
+  text-align: center;
+}
+
+.moving{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  border: 10px solid greenyellow;
+  text-align: center;
+}
+
+.spin{
+  width: 100px;
+  height: 100px;
+  background-color: orangered;
+  border: 10px solid yellow;
+  border-top: 10px solid green;
+  border-radius: 50%;
+  animation: spin 2s ease-in-out 0s infinite ;
+
+}
+
+.bounce{
+  width: 100px;
+  height: 100px;
+  background-color: fuchsia;
+  border: 10px solid yellow;
+  border-radius: 50%;
+  animation: bounce 0.5s ease-in-out 0s infinite alternate-reverse;
+
+}
+
+
+@keyframes abc{
+  0%{
+      background-color: aqua;
+  }
+  50%{
+      background-color: darkgrey;
+      transform: scale(2);
+      transform: rotate(180deg);
+  }
+  100%{
+      background-color: greenyellow;
+      font-size: 30px;
+      color: red;
+      transform: scale(3);
+      transform: rotate(360deg);
+      border: 10px dashed red;
+      transform: translate(100px, 150px);
+  }
+    
+}
+
+@keyframes abcd{
+  from{background-color: navy;
+
+  }
+  to{
+      background-color: gold;
+      transform: scale(2);
+      border: 10px groove red;
+      rotate: 180deg;
+  }
+}
+@keyframes abcde{
+  from{position: relative;
+
+  }
+  to{
+      margin-left: 100px;
+  }
+}
+
+@keyframes spin{
+  from{transform: rotate(0deg);
+
+  }
+  to{
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce{
+  from{position: 0;
+
+  }
+  to{
+      position: relative;
+      margin-bottom: 200px;
+      
+  }
+}
+
+h1{
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}

@@ -1,0 +1,108 @@
+/* styles.css */
+
+body {
+  color: #333;
+  background-color: #f4f4f4;
+  font-size: 16px;
+}
+header {
+  background-color: dodgerblue;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.navigation-menu {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.navigation-menu li {
+  display: inline;
+  margin-right: 20px;
+}
+.navigation-menu a {
+  text-decoration: none;
+  color: #0654b3;
+}
+.navigation-menu a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #0654b3;
+  text-decoration: underline;
+}
+a:hover,
+a:focus {
+  color: #002766;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 20px 0;
+  text-align: left 20px;
+}
+.sidebar {
+  flex: 1;
+  order: 1;
+  border-right: 1px solid #ccc;
+  margin-right: 20px;
+  padding: 0 10px;
+  
+}
+.main-content {
+  flex: 2;
+  order: 2;
+}
+
+.large-text {
+  font-size: 20px;
+}
+.high-contrast-text {
+  color: #000;
+  background-color: #fff;
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+ <hr>
+    <a href="../index.html" id="bkto">BACK TO HOME</a>/* New styles for back to home link */
+    #bkto { 
+        display: inline-block;
+        width: 500px;
+        margin: 20px;
+        margin-left: 500px;
+        padding: 10px 15px;
+        background-color: #37eeb1;
+        color: rgb(73, 68, 68);
+        text-decoration: none;
+        text-align: center;
+        border-radius: 5px;
+        border-bottom: #336088 5px solid;
+        
+    }
