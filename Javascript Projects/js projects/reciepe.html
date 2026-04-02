@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Filter App</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin: 10px auto;
+      max-width: 500px;
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>RECIPE APP</h1>
+
+  <!--  Filters -->
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="Search by name..." />
+    <select id="difficultySelect">
+      <option value="">All Difficulties</option>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select>
+    <select id="recipeSelect">
+      <option value="">All Recipes</option>
+      <!-- Filled by JS -->
+    </select>
+  </div>
+
+  <!--  Recipe cards -->
+  <div id="recipeContainer"></div>
+
+  <script>
+    //  API se data fetch karo
+    let recipes = [];
+
+    fetch("https://dummyjson.com/recipes")
+      .then(res => res.json())
+      .then(data => {
+        recipes = data.recipes;
+        populateDropdowns(recipes);
+        showRecipes(recipes);
+      });
+
+    const searchInput = document.getElementById("searchInput");
+    const difficultySelect = document.getElementById("difficultySelect");
+    const recipeSelect = document.getElementById("recipeSelect");
+    const recipeContainer = document.getElementById("recipeContainer");
+
+    //  Filtering handler
+    function filterRecipes() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedDifficulty = difficultySelect.value;
+      const selectedRecipe = recipeSelect.value;
+
+      const filtered = recipes.filter(recipe => {
+        const matchesSearch = recipe.name.toLowerCase().includes(searchText);
+        const matchesDifficulty = selectedDifficulty === "" || recipe.difficulty === selectedDifficulty;
+        const matchesRecipe = selectedRecipe === "" || recipe.name === selectedRecipe;
+        return matchesSearch && matchesDifficulty && matchesRecipe;
+      });
+
+      showRecipes(filtered);
+    }
+
+    //  Recipe dropdown fill karo
+    function populateDropdowns(data) {
+      data.forEach(recipe => {
+        const option = document.createElement("option");
+        option.textContent = recipe.name;
+        option.value = recipe.name;
+        recipeSelect.appendChild(option);
+      });
+    }
+
+    //  Cards display
+    function showRecipes(list) {
+      recipeContainer.innerHTML = "";
+      if (list.length === 0) {
+        recipeContainer.innerHTML = "<p>No recipes found.</p>";
+        return;
+      }
+
+      list.forEach(recipe => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${recipe.image}" alt="${recipe.name}" />
+          <h3>${recipe.name}</h3>
+          <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+          <p><strong>Prep Time:</strong> ${recipe.prepTimeMinutes} min</p>
+        `;
+        recipeContainer.appendChild(card);
+      });
+    }
+
+    //  Event listeners
+    searchInput.addEventListener("input", filterRecipes);
+    difficultySelect.addEventListener("change", filterRecipes);
+    recipeSelect.addEventListener("change", filterRecipes);
+  </script>
+  <script src="../js/reciepe.js"></script>
+
+</body>
+</html>
